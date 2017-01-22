@@ -1,0 +1,24 @@
+#videoElement {
+    margin: 0 auto;
+    max-width: 100%;
+    height:auto;
+}
+
+.video-wrapper {
+    /* background-color: #666; */
+}
+
+.caption-text {
+    color: white;
+    font-size: 3em;
+    transition: opacity .25s ease-in-out;
+}
+
+.caption {
+    position: relative;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.7;
+    max-width: 100%;
+}

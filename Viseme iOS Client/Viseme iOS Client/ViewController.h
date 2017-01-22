@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+//@import MobileCoreServices;
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UIViewController <UIImagePickerControllerDelegate>
+@property (strong, nonatomic) UIImagePickerController *imagePickerController;
 
 @end
 

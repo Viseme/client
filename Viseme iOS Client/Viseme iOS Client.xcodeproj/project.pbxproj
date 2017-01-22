@@ -14,6 +14,10 @@
 		D8AB78951E33F8F200029E63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8AB78941E33F8F200029E63 /* Assets.xcassets */; };
 		D8AB78981E33F8F200029E63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8AB78961E33F8F200029E63 /* LaunchScreen.storyboard */; };
 		D8AB78A31E33F8F200029E63 /* Viseme_iOS_ClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AB78A21E33F8F200029E63 /* Viseme_iOS_ClientTests.m */; };
+		D8AB78AF1E34041800029E63 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8AB78AE1E34041800029E63 /* MobileCoreServices.framework */; };
+		D8AB78B11E34042500029E63 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8AB78B01E34042500029E63 /* Speech.framework */; };
+		D8AB78B51E34043A00029E63 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8AB78B21E34043A00029E63 /* Accelerate.framework */; };
+		D8AB78B71E34043A00029E63 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8AB78B41E34043A00029E63 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,11 @@
 		D8AB789E1E33F8F200029E63 /* Viseme iOS ClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Viseme iOS ClientTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8AB78A21E33F8F200029E63 /* Viseme_iOS_ClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Viseme_iOS_ClientTests.m; sourceTree = "<group>"; };
 		D8AB78A41E33F8F200029E63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8AB78AE1E34041800029E63 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D8AB78B01E34042500029E63 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
+		D8AB78B21E34043A00029E63 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		D8AB78B31E34043A00029E63 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		D8AB78B41E34043A00029E63 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +56,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8AB78B51E34043A00029E63 /* Accelerate.framework in Frameworks */,
+				D8AB78B71E34043A00029E63 /* AVFoundation.framework in Frameworks */,
+				D8AB78B11E34042500029E63 /* Speech.framework in Frameworks */,
+				D8AB78AF1E34041800029E63 /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +79,7 @@
 				D8AB78871E33F8F100029E63 /* Viseme iOS Client */,
 				D8AB78A11E33F8F200029E63 /* Viseme iOS ClientTests */,
 				D8AB78861E33F8F100029E63 /* Products */,
+				D8AB78AD1E34041700029E63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +123,18 @@
 				D8AB78A41E33F8F200029E63 /* Info.plist */,
 			);
 			path = "Viseme iOS ClientTests";
+			sourceTree = "<group>";
+		};
+		D8AB78AD1E34041700029E63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8AB78B21E34043A00029E63 /* Accelerate.framework */,
+				D8AB78B31E34043A00029E63 /* AudioUnit.framework */,
+				D8AB78B41E34043A00029E63 /* AVFoundation.framework */,
+				D8AB78B01E34042500029E63 /* Speech.framework */,
+				D8AB78AE1E34041800029E63 /* MobileCoreServices.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +186,7 @@
 				TargetAttributes = {
 					D8AB78841E33F8F100029E63 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = M7CQNY6ET6;
 						ProvisioningStyle = Automatic;
 					};
 					D8AB789D1E33F8F200029E63 = {
@@ -297,7 +324,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -338,7 +365,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -349,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M7CQNY6ET6;
 				INFOPLIST_FILE = "Viseme iOS Client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "viseme.Viseme-iOS-Client";
@@ -360,6 +388,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M7CQNY6ET6;
 				INFOPLIST_FILE = "Viseme iOS Client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "viseme.Viseme-iOS-Client";
