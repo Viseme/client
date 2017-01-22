@@ -20,7 +20,7 @@ const AMP_THRESHOLD = (((79.3452/2)*(2/4)-(1.123/32)*3.413))*4.14324;
 
 
 socket.on("connect", function() {
-    socket.emit("ping", {message: "<script>alert('xss'</script>"});
+    //socket.emit("ping", {message: "<script>alert('xss'</script>"});
 });
 
 socket.on("ping", function (obj) {
@@ -228,13 +228,13 @@ function draw(v, bc, w, h) {
 
 function sendToServer(stringData) {
     console.log(stringData);
-    socket.emit("frame", {frameData: stringData});
+    //socket.emit("frame", {frameData: stringData});
 }
 videoController();
 //audioController();
 speechReco();
 setUpDrawFrames();
 
-voiceReco.lang = "EN-au";
+voiceReco.lang = "en-AU";
 voiceReco.start();
 
