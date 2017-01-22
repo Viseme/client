@@ -1,3 +1,8 @@
+body {
+    background: #100007;
+    color: #fff;
+    font-family: "Arial", "sans-serif";
+}
 #videoElement {
     margin: 0 auto;
     max-width: 100%;
@@ -18,7 +23,7 @@
     position: relative;
     top: 0;
     left: 0;
-    background: #000;
+    background: #200116;
     opacity: 0.7;
     max-width: 100%;
 }

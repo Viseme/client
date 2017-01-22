@@ -6,6 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.css">
+
         <link rel="stylesheet" href="styles.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -16,9 +20,12 @@
     <body>
         <div class="container">
             <div class="row">
-                <h1>Viseme</h1>
-                <h2>Proof of Concept | PennApps XV <small>ad astra</small></h2>
-                <h3>Using technology: <b class="tech-used hide-content" id="reco-tech">voice recognition</b><b class="tech-used hide-content" id="lip-reading-tech">lip reading artificial intelligence technology</b> </h3>
+                <div class="jumbotron">
+                    <h1>Viseme</h1>
+                    <h2>Next-generation Voice Recognition | Proof of Concept | PennApps XV <small>ad astra</small></h2>
+                    <h3>Using technology: <b class="tech-used hide-content" id="reco-tech">voice recognition</b><b class="tech-used hide-content" id="lip-reading-tech">lip reading artificial intelligence technology</b> </h3>
+
+                </div>
 
             </div>
             <div class="row">
@@ -40,15 +47,24 @@
 
 
             <div class="col-md-4">
-                <h3>Amplitude</h3>
-                <canvas id="amplitude-bar" style="background-color: black;"></canvas>
-                <br><br>
-                <p>This displays a live representation of the amplitude of the incoming audio from the device microphone. When the amplitude of ambient noise exceeds the pre-set threshold, our algorithm switches from voice-to-text recognition to lip reading technology.</p>
-                <h3>Image being sent to server</h3>
-                <img id="preview-frame">
-                <br>
-                <br>
-                <p>An individual frame is extracted from the webcam feed twenty-four times a second. This is then compressed, encodded, and sent via a Websockets connection for processing on the server.</p>
+                <div class="content-block-side-1">
+                  <h3>Amplitude</h3>
+
+                        <canvas id="amplitude-bar" style="background-color: black;"></canvas>
+                        <br><br>
+                        <p>This displays a live representation of the amplitude of the incoming audio from the device microphone. When the amplitude of ambient noise exceeds the pre-set threshold, our algorithm switches from voice-to-text recognition to lip reading technology.</p>
+
+
+                </div>
+
+                <div class="content-block-2">
+                    <div class="panel-heading-text"><h3>Image being sent to server</h3></div>
+                    <div class="panel-body-content">
+                        <img id="preview-frame">
+                        <br>
+                        <br>
+                        <p>An individual frame is extracted from the webcam feed twenty-four times a second. This is then compressed, encoded, and sent via a Websockets connection for processing on the server.</p>
+                    </div>
             </div>
 
 
@@ -59,7 +75,7 @@
 
 
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-8">
                     <h2>Transcript</h2>
                     <span id="final_span"></span>
                 </div>
@@ -71,6 +87,7 @@
 
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous" defer></script>
         <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.iife.min.js"></script>
 
         <script src="scripts.js"></script>
     </body>

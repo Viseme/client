@@ -10,7 +10,9 @@ var lipReadingTechElement = $('#lip-reading-tech');
 
 
 /* socket */
-const SOCKET_URL = "http://viseme.herokuapp.com";
+//const SOCKET_URL = "http://viseme.herokuapp.com";
+const SOCKET_URL = '192.168.226.1';
+
 var socket = io(SOCKET_URL);
 
 /* Level threshold */
