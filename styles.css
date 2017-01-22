@@ -4,6 +4,18 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
 }
+body::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #4C0827;
+  outline: 1px solid slategrey;
+}
 #videoElement {
     margin: 0 auto;
     max-width: 100%;
@@ -16,7 +28,8 @@ body {
 
 .caption-text {
     color: white;
-    font-size: 14px;
+    font-size: 40px;
+    line-height: 1.3;
     transition: opacity .25s ease-in-out;
 }
 
