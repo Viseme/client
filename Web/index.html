@@ -21,31 +21,49 @@
                 <h3>Using technology: <b class="tech-used hide-content" id="reco-tech">voice recognition</b><b class="tech-used hide-content" id="lip-reading-tech">lip reading artificial intelligence technology</b> </h3>
 
             </div>
+            <div class="row">
 
-            <div class="video-wrapper">
-                <video autoplay="true" id="videoElement"></video>
-                <div class="caption">
-                    <div class="caption-text">
-                        <span id="interim_span"></span>
+
+
+                <div class="col-md-8">
+                    <h3>Live Video Feed</h3>
+                    <p>The live video feed is pulled from the device camera(s) using the Javascript <code>getUserMedia()</code> API.</p>
+                    <div class="video-wrapper">
+                        <video autoplay="true" id="videoElement"></video>
+                        <div class="caption">
+                            <div class="caption-text">
+                                <span id="interim_span"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+
+            <div class="col-md-4">
+                <h3>Amplitude</h3>
+                <canvas id="amplitude-bar" style="background-color: black;"></canvas>
+                <br><br>
+                <p>This displays a live representation of the amplitude of the incoming audio from the device microphone. When the amplitude of ambient noise exceeds the pre-set threshold, our algorithm switches from voice-to-text recognition to lip reading technology.</p>
+                <h3>Image being sent to server</h3>
+                <img id="preview-frame">
+                <br>
+                <br>
+                <p>An individual frame is extracted from the webcam feed twenty-four times a second. This is then compressed, encodded, and sent via a Websockets connection for processing on the server.</p>
             </div>
 
-
-        <div class="row">
-            <p>
-                <h3>Transcript</h3>
-                <span id="final_span"></span>
-            </p>
 
         </div>
 
-            <div class="row">
-                <canvas id="amplitude-bar" style="background-color: black;"></canvas>
-            </div>
+
+
+
 
             <div class="row">
-                <img id="preview-frame">
+                <div class="col-md-3">
+                    <h2>Transcript</h2>
+                    <span id="final_span"></span>
+                </div>
+
             </div>
         </div>
 

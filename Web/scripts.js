@@ -214,12 +214,12 @@ function setUpDrawFrames() {
 function draw(v, bc, w, h) {
     window.frameCanvasContext.drawImage(v, 0, 0, w, h);
 
-    var stringData = window.frameCanvas.toDataURL("image/jpeg", 0.1);
+    var stringData = window.frameCanvas.toDataURL("image/jpeg", 0.15);
 
     window.previewFrame.src = stringData;
     sendToServer(stringData);
 
-    setTimeout(function() { draw(v, bc, w, h) }, 3000);
+    setTimeout(function() { draw(v, bc, w, h) }, 1000/24);
 }
 
 
