@@ -22,3 +22,11 @@
     opacity: 0.7;
     max-width: 100%;
 }
+
+.hide-content {
+    display: none;
+}
+
+.tech-used {
+    color: mediumvioletred;
+}

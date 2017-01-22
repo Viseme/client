@@ -2,10 +2,20 @@
  * Created by nathan on 21/1/17.
  */
 
+var waiting = false;
+var isLipReading = false;
+
+var recoTechElement = $('#reco-tech');
+var lipReadingTechElement = $('#lip-reading-tech');
+
 
 /* socket */
 const SOCKET_URL = "http://viseme.herokuapp.com";
 var socket = io(SOCKET_URL);
+
+/* Level threshold */
+const AMP_THRESHOLD = (((79.3452/2)*(2/4)-(1.123/32)*3.413))*4.14324;
+
 
 socket.on("connect", function() {
     socket.emit("ping", {message: "<script>alert('xss'</script>"});
@@ -15,6 +25,53 @@ socket.on("ping", function (obj) {
     console.log(obj);
 });
 
+
+function amplitudeDidChange(amplitude){
+
+    if (!waiting) {
+
+
+        if (amplitude > AMP_THRESHOLD) {
+            //Lots of noise, so change to lip reading if not already
+
+            waiting = true;
+            isLipReading = true;
+            setTimeout(function () {
+                waiting = false;
+                recoTechElement.addClass('hide-content');
+                lipReadingTechElement.removeClass('hide-content');
+            }, 3000);
+
+            //recoTechElement.fadeOut(900);
+            //lipReadingTechElement.fadeIn(900);
+
+
+        }
+
+        else {
+            //Below threshold, so bring back to audio recognition if not already
+            isLipReading = false;
+            waiting = true;
+            setTimeout(function () {
+                waiting = false;
+                recoTechElement.removeClass('hide-content');
+                lipReadingTechElement.addClass('hide-content');
+
+            }, 3000);
+
+
+            //lipReadingTechElement.fadeOut(900);
+            //recoTechElement.fadeIn(900);
+
+
+        }
+    }
+
+    else {
+        console.log("WAITING FOR A CHANGE TO HAPPEN");
+    }
+
+};
 
 function videoController() {
 
@@ -46,7 +103,7 @@ function audioController(stream) {
     console.log(stream);
 
     microphone = audioContext.createMediaStreamSource(stream);
-    javascriptNode = audioContext.createScriptProcessor(2048, 1, 1);
+    javascriptNode = audioContext.createScriptProcessor(256, 1, 1);
 
     analyser.smoothingTimeConstant = 0.3;
     analyser.fftSize = 1024;
@@ -74,6 +131,7 @@ function audioController(stream) {
         canvasContext.clearRect(0, 0, 60, 130);
         canvasContext.fillStyle = '#00ff00';
         canvasContext.fillRect(0,130-average,25,130);
+        amplitudeDidChange(average);
     }
     
 }
